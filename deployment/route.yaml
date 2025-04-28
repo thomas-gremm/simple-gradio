@@ -1,0 +1,17 @@
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: simple-gradio
+  labels:
+    app: simple-gradio
+spec:
+  to:
+    kind: Service
+    name: simple-gradio
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+  wildcardPolicy: None
